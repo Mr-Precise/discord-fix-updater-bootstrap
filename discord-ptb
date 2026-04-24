@@ -1,0 +1,10 @@
+abi <abi/3.0>,
+
+#include <tunables/global>
+
+profile discord-ptb @{HOME}/.config/discordptb/app-*/DiscordPtb flags=(unconfined) {
+
+  #include <abstractions/base>
+
+  include if exists <local/discord-ptb>
+}

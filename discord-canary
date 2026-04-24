@@ -1,0 +1,10 @@
+abi <abi/3.0>,
+
+#include <tunables/global>
+
+profile discord-canary @{HOME}/.config/discordcanary/app-*/DiscordCanary flags=(unconfined) {
+
+  #include <abstractions/base>
+
+  include if exists <local/discord-canary>
+}
