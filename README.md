@@ -16,7 +16,8 @@ On **Ubuntu 22.04** and others using **AppArmor 3.x**, this causes a syntax erro
 - Discord might fail to launch or the system security service stays down.
 
 ### The Fix
-Replace the broken profiles in `/etc/apparmor.d/` with the fixed versions from this repo. They use `abi <abi/3.0>` and remove the unsupported `userns` keyword while keeping the app functional via the `unconfined` flag.
+Replace the broken profiles in `/etc/apparmor.d/` with the fixed versions from this repo.  
+They use `abi <abi/3.0>` or removes the ABI line entirely and remove the unsupported `userns` keyword while keeping the app functional via the `unconfined` flag.
 
 **Files included:**
 - `discord-ptb` - for the Canary version.
@@ -26,6 +27,15 @@ Replace the broken profiles in `/etc/apparmor.d/` with the fixed versions from t
 ### How to use
 1. Copy the fixed file to `/etc/apparmor.d/` (with replacement).
 2. Reload AppArmor: `sudo systemctl reload apparmor`
+
+### Quick fix (script)
+This repository includes a fix.sh script that automatically applies the patched AppArmor profiles.  
+Script usage:
+
+`sudo ./fix.sh`  
+* detects the AppArmor version
+* applies the fix only for supported versions (2.13 and 3.0)
+* installs the provided profiles into `/etc/apparmor.d/`
 
 ### Technical Trivia
 Under the hood, the new `updater_bootstrap` is a binary written in **Rust**.  
