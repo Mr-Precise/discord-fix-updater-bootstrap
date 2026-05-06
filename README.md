@@ -26,7 +26,7 @@ They use `abi <abi/3.0>` or removes the ABI line entirely and remove the unsuppo
 
 ### How to use
 1. Copy the fixed file to `/etc/apparmor.d/` (with replacement).
-2. Reload AppArmor: `sudo systemctl reload apparmor`
+2. Reload AppArmor: `sudo systemctl restart apparmor`
 
 ### Quick fix (script)
 This repository includes a fix.sh script that automatically applies the patched AppArmor profiles.  

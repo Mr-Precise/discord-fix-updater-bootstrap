@@ -50,5 +50,5 @@ for file in "${FILES[@]}"; do
 done
 
 echo "Done."
-echo "Recommended to restart or reload AppArmor:"
-echo "sudo systemctl reload apparmor"
+echo "Recommended to restart AppArmor:"
+echo "sudo systemctl restart apparmor"
