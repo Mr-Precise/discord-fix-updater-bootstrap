@@ -1,0 +1,8 @@
+
+include <tunables/global>
+profile discord @{HOME}/.config/discord/app-*/Discord flags=(unconfined) {
+
+  include <abstractions/base>
+  
+  include if exists <local/discord>
+}

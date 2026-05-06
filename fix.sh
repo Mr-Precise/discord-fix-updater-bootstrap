@@ -5,6 +5,7 @@ APPARMOR_DIR="/etc/apparmor.d"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 FILES=(
+  "discord"
   "discord-canary"
   "discord-ptb"
   "discord-development"
